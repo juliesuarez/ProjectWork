@@ -1,0 +1,59 @@
+{% extends 'ProjectWork/base.html'%} {% block content%}
+<br></br>
+
+<style>
+  body,html {
+    background-color: #dfe9f5;
+  }
+  </style> 
+
+<div class = "container">
+<h1 class = "text-center" style="color: black; font-weight: bolder;">TOTAL SALES MADE</h1><br>
+  <table class="table">
+    <thead class="thead-dark" style="background-color: #4477CE;">
+      <tr>
+        <th scope="col" style="font-weight: bolder;">Total Amount Received</th>
+        <th scope="col" style="font-weight: bolder;">Total Amount Due</th>
+        <th scope="col" style="font-weight: bolder;">Net Amount</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <tr>    
+        <td style="font-weight: bolder;">UGX{{total}}</td>
+        <td style="font-weight: bolder;">UGX{{change}}</td>
+        <td style="font-weight: bolder;">UGX{{net}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br></br>
+
+<div class = "container">
+  <table class="table">
+    <thead class="thead-dark" style="background-color:#4477CE ;">
+      <tr>
+        <th scope="col" style="font-weight: bolder;">Customer name</th>
+        <th scope="col">Sparepart Purchased</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price(UGX)</th>
+        <th scope="col">Total Cost</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Amount Due</th>
+      </tr>
+    </thead>
+    {% for sale in sales %}
+    <tbody style="font-weight: bolder; color: black;">
+      <tr>    
+        <td>{{sale.customer_name | title}}</td>
+        <td>{{sale.item | title}}</td>
+        <td>{{sale.quantity}}</td>
+        <td>UGX{{sale.unit_price}}</td>
+        <td>UGX{{sale.get_total}}</td>
+        <td>UGX{{sale.amount_received}}</td>
+        <td>UGX{{sale.get_change}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock%}

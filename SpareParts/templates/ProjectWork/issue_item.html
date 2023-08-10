@@ -1,0 +1,22 @@
+{% extends 'ProjectWork/base.html'%}
+{% load crispy_forms_tags %}
+{%  load static %}
+{% block content %}
+<br/>
+
+<style>
+    html,body {
+      background-color: #dfe9f5;
+    }
+</style>
+<div class="container">
+    <form method="POST" action="">
+        <h1 class="van" style="color: black; text-align: center;">SALES FORM</h1>
+        <br/>
+        {% csrf_token %}
+        {{ sales_form | crispy }}
+        <input type="submit" class="btn btn-primary btn" type="button" value="SALE">
+    </form>
+
+</div>
+{% endblock %}

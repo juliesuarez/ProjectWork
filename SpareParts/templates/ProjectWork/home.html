@@ -1,0 +1,55 @@
+{% extends 'ProjectWork/base.html'%} {% block content%}
+<br></br>
+
+<style>
+  html,body {
+    background-color: #dfe9f5;
+  }
+</style>
+<div class = "container">
+  <h1 class= "text-center" style="color: black; font-weight: bolder;">SPARE PARTS IN STOCK</h1>
+  <br>
+
+  <div class = "container">
+    <form action = "" method = "GET">
+      {{product_filters.form}}
+      <input type = "submit" value = "Search Products" class="btn btn-primary btn"/>
+    </form>
+  </div>
+
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Sparepart Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price(UGX)</th>
+        <th scope = "col">Sale</th>
+      </tr>
+    </thead>
+    {% for product in products%}
+    <tbody>
+      <tr>
+        <!-- placeholders that will be replaced by the actual data of products -->    
+        <td>{{product.Category_name}}</td>
+        <td>{{product.item_name}}</td>
+        <td>{{product.total_quantity}}</td>
+        <td>UGX{{product.unit_price}}</td>
+        <!-- handling buy item link/button,hundled by product_detail view -->
+        <td><a href="{% url 'product_detail' product.id %}">
+        <input type="submit" value="PURCHASE" class="btn btn-primary btn" type="button" /></a></td>
+
+
+<td id="mydelete_btn"><a href="{% url 'delete_product' product.id %}">
+  <input type="submit" value="DEL" class="btn btn-primary" type="button" disabled="true" onclick="funki()" id="mydelete_btn"/></a></td>
+
+
+
+
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock%}

@@ -1,0 +1,50 @@
+.link {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    background-color: gray;
+}
+
+.van {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#logo img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.mb-3 {
+    width: 50%;
+}
+
+.heading {
+    text-align: center;
+    font-size: x-large;
+    font-style: italic;
+    color: rebeccapurple;
+}
+
+.form-control {
+    border:  solid;
+}
+
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #A78295;
+    width: 100% !important;
+    height: 100vh;
+    display: table;
+    position: relative;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

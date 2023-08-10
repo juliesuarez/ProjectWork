@@ -1,0 +1,81 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+    <!-- startnavbar -->
+    
+    <div class="nav" style="background-color: black;" >
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <div id="logo"><img style="border-radius: 50px; width: 50px; height: 50px;" src="{% static 'image/logo.jpg' %}"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a style="color: white;" class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;" class="nav-link" href="{% url 'service' %}">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" style="width: 300px; font-style: italic;" type="submit">Search</button>
+              </form>
+              <p style="margin-left: 170px !important; color: white;">Kiseka-Market,Central Kampala-Uganda</p>
+              <br>
+          </div>
+      </nav>
+  </div>
+    <!-- endnavbar -->
+
+    <!-- main -->
+    <div class="heading">
+        <h1 style="text-align: center; color: blue;">Welcome to BeRealMotor Spare Parts Company</h1>
+    </div>
+    <div>
+      <img  style="width: 100%;"src="{% static 'image/julie.jpg' %}">
+    </div>
+  
+
+
+    <div class="card-footer bg-transparent border-success" style="text-align: center; font-weight: bolder; color: blue;">
+    "Spare no expense on quality.
+    Trust our reliable parts to keep your machines in top shape."
+    </div>
+    
+    <!-- footer -->
+    <footer style="background-color: black; color: white; text-align: center;">
+                    
+      <p>@copyright  2023 BeRealMotor Spare Parts Company. All rights reserved.</p>
+      <p>Kiseka Market-Central Kampala</p>
+      <i class="fa fa-twitter-square">
+        <a href="https://twitter.com/home">@juliecristiana</a>
+      </i>
+  </footer>
+  <!-- endfooter -->
+
+
+
+    
+</body>
+</html>
