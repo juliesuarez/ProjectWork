@@ -5,37 +5,45 @@
 
 <style>
   html,body {
-    background-color: #dfe9f5;
+    background-color: #D8D9DA;
+  }
+  th,td {
+    border: 1px solid white;
   }
 </style>
 
 <br></br>
-<div class = "container">
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Category</th>
-        <th scope="col">Spare part Name</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Unit Price(UGX)</th>   
-      </tr>
-    </thead>
-    <tbody>
-      <tr>    
-        <td>{{product.Category_name}}</td>
-        <td>{{product.item_name}}</td>
-        <td>{{product.total_quantity}}</td>
-        <td>UGX{{product.unit_price}}</td>   
-      </tr>
-    </tbody>  
-  </table>
+    <div class = "container">
+      <table class="table" style="background-color: black;">
+        <thead class="thead-dark" style="color:black; background-color:#FFF6E0 ;">
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col"> Part Name</th>
+            <th scope="col">Part Number</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Country of Origin</th> 
+            <th scope="col">Branch Name</th> 
+            <th scope="col">Unit Price(UGX)</th>   
+          </tr>
+        </thead>
+        <tbody style=" color: #FFF6E0;">
+          <tr>    
+            <td>{{product.Category_name}}</td>
+            <td>{{product.part_name}}</td>
+            <td>{{product.part_number}}</td>
+            <td>{{product.total_quantity}}</td>
+            <td>{{product.country_of_origin}}</td> 
+            <td>{{product.branch_name}}</td> 
+            <td>UGX{{product.unit_price}}</td> 
+          </tr>
+        </tbody>  
+      </table>
+    
+      <br>
+    </div>
+    <div class = "container">
+      <a href="{% url 'issue_item' product.id %}" ><input type="submit" value="Purchase" class="btn btn-info" btn type="button"/></a>
+      <a href="{% url 'add_to_stock' product.id %}" ><input type= "submit" value="AddStock" class="btn btn-info" type="button"/></a>
+    </div>
 
-  <br></br>
-  <div class = "container">
-    <a href="{% url 'issue_item' product.id %}" ><input type="submit" value="Purchase" class="btn btn-primary" btn type="button"/></a>
-    <a href="{% url 'add_to_stock' product.id %}" ><input type= "submit" value="AddStock" class="btn btn-primary btn" type="button"/></a>
-</div>
-
-
-</div>
 {% endblock%}

@@ -15,9 +15,10 @@ from django.contrib.auth.forms import UserCreationForm
 #handles a form that the user will use to add the stock
 class AddForm(ModelForm): #workers edit here,add received stock.
     class Meta:
-        model = Product
+        model = SparePart
         fields = [
-            'received_quantity'
+            'received_quantity',
+            'branch_name'
         ]
 
 

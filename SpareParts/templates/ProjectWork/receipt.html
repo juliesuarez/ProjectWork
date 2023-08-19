@@ -5,27 +5,27 @@
 
 <style>
   html,body {
-    background-color: #dfe9f5;
+    background-color: #D8D9DA;
   }
 </style>
-<div class="container">
-  <h1 class="card-header text-center" style="font-weight: bolder;">RECEIPT</h1><br>
+<div class="container" >
+  <h1 class="card-header text-center" style="font-weight: bolder;">RECEIPTS</h1><br>
   {% for sale in sales %}
   <div class="card">
-    <div class="card-body">
+    <div class="card-body" style="background-color: beige;">
       <h4 class="card-title">Customer : {{sale.customer_name | title}}</h4>
-      <h4 class="card-text">Spare Part : {{sale.item}}</h4>
+      <h4 class="card-text">Spare Part : {{sale.part}}</h4>
       <h4 class="card-text">Amount Paid:  UGX{{ sale.amount_received }}</h4>
       <h4 class="card-text">Quantity: {{sale.quantity }}</h4>
-      <h2>Total Price :  UGX{{ sale.get_total }}</h2>
+      <h2>Unit Price :  UGX{{ sale.get_total }}</h2>
       <div style="flex: 1">
-        <h4 class="card-text">Amount Due: UGX{{ sale.get_change }}</h4>
+        <h4 class="card-text">Amount Due: UGX{{ sale.amount_due }}</h4>
 
         <a href="{% url 'receipt_detail' sale.id %}">
-          <input type="submit" value="Receipt" class="btn btn-success" type="button"/>
+          <input type="submit" value="Receipt" class="btn btn-info" type="button"/>
         </a>
 
-        <div style="text-align: center; font-style: italic; font-weight: bolder; color: #6c85bd;">
+        <div style="text-align: center; font-style: italic; font-weight: bolder; color: black;">
           <p> PAYMENT RECEIVED WITH THANKS!!!</p>
         </div>
         

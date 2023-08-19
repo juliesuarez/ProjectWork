@@ -13,10 +13,10 @@
 
 <div class="container">
   <form method="POST" action = "">
-    <h1 class = "text-center">ADD TO STOCK FORM</h1><br>
+    <h1 class = "text-center">UPDATE STOCK FORM</h1><br>
     {% csrf_token %} 
     {{form | crispy}}
-    <input type = "submit" class="btn btn-success btn"type="button" value="ADDSTOCK">
+    <input type = "submit" class="btn btn-info btn"type="button" value="UPDATESTOCK">
   </form>
 </div>
 {% endblock %}

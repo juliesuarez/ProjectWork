@@ -27,20 +27,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                  <a style="color: #FFF6E0; font-weight: bolder;" class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'service' %}">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/login">Login</a>
+                  <a style="color: #FFF6E0; font-weight: bolder;" class="nav-link" href="/login">Login</a>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit" style="width: 300px;">Search</button>
-              </form>
-              <p style="margin-left: 300px !important; color: white;">Kiseka-Market,Central Kampala-Uganda</p>
+              <div class="heading">
+                <h5 style="text-align: center; color: #FFF6E0; margin-left: 570px; font-weight: bolder;">Welcome to BeRealMotor Spare Parts Company</h5>
+              </div>
+              
             </div>
           </div>
       </nav>
@@ -52,35 +48,50 @@
     <!-- main -->
     <style>
       body,html {
-        background-color: #dfe9f5;
+        background-color: #D8D9DA;
+        margin-bottom: 30px;
+        margin-top: 30px;
       }
+      .container-fluid {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: black;
+      
+    }
+
+    .van {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
     </style>
-    <div class="heading">
-        <h1 style="text-align: center; color:#001a5f ;">BeRealMotor Spare Parts Company</h1>
-        <h2 style="text-align: center; color: #001a5f;">Login details here</h2>
-    </div>
+
+      
+        <h2 style="text-align: center; color: black; margin-top:30px; padding-bottom: 0;">Login details here</h2>
+    
     {% block content %}
-    <form id="form" method = 'POST' style="border-radius: 25px; border: 90px solid #6c85bd; padding: 30px; width: 700px; height: 400px; margin-block: 50px; margin-left: 300px;">
+    <form id="form" method = 'POST' style="border-radius: 20px; border: 30px solid black; padding: 30px; width: 500px; height: 300px; margin-left: 400px;">
      {% csrf_token %} 
      <!-- for security purposes,prevents hackers from adding malicious content into our urls. -->
      {{form | crispy}}
       <!-- form handled by crispy forms -->
       <br>
-      <input type="submit" name="Submit" class="btn  btn-primary btn-block" style="margin-left: 210px;" type="button" value="submit"> <br>
-      <br>
-      <p style="margin-left: 200px;">
-        <a href="">Forgot Password</a>
-      </p>
+      <input type="submit" name="Submit" class="btn  btn-info btn-block" style="margin-left: 150px;" type="button" value="LOGIN"> 
     </form>
     {% endblock %}
     <!-- footer -->
-    <footer style="background-color: black; color: white; text-align: center;">             
-      <p>@copyright  2023 BeRealMotor Spare Parts Company. All rights reserved.</p>
-      <p>Kiseka Market-Central Kampala</p>
-      <i class="fa fa-twitter-square">
-        <a href="https://twitter.com/home">@juliecristiana</a>
-      </i>
-  </footer>
+        <footer class="van" style="background-color: black; color: #FFF6E0; text-align: center;">             
+          <p>@copyright  2023 BeRealMotor Spare Parts Company. All rights reserved.
+            Kiseka Market-Central Kampala.
+          </p>
+          <i class="fa fa-copyright" style="color:#FFF6E0;">
+            juliesuareznakawesi
+          </i>
+          <i class="fa fa-twitter-square">
+            <a href="https://twitter.com/home">@juliecristiana</a>
+          </i>
+      </footer>
   <!-- endfooter -->
 
     

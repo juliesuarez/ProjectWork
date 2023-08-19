@@ -13,6 +13,7 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#pointing to the directory /root for the project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,9 +21,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+#key is required for the project to run
 SECRET_KEY = '%=0&*4hyq=3)(r%ck@5i-!l4_czs4i_)k@g$-r)65lqfd^oi9l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#it lets django to allow me debug by displaying messages
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
 ]
 
+#handle security  like csrf-token,login ,flash messages
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,11 +58,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+#defines the path for the urls of the project
 ROOT_URLCONF = 'SpareParts.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        #states the location of the templates in the project BASE_DIRECTORY.
         'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -71,11 +77,11 @@ TEMPLATES = [
         },
     },
 ]
-
+#for deployment over the cloud
 WSGI_APPLICATION = 'SpareParts.wsgi.application'
 
 
-# Database
+# Database configuration
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {

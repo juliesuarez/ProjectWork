@@ -1,11 +1,11 @@
 #help us search for something from the page.
 import django_filters 
-from . models import Product, Category
+from . models import SparePart, Category
 class ProductFilter(django_filters.FilterSet):
     class Meta: 
-        model = Product
+        model = SparePart
         fields = [
-            'item_name'
+            'part_name'
         ]
 
 class CategoryFilter(django_filters.FilterSet):

@@ -5,5 +5,5 @@ from .models import *
 
 #here we are registering our models from models.py
 admin.site.register(Category)
-admin.site.register(Product)
+admin.site.register(SparePart)
 admin.site.register(Sale)
