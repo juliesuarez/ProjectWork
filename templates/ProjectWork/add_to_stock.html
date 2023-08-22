@@ -1,0 +1,22 @@
+{% extends 'ProjectWork/base.html'%} 
+{% load crispy_forms_tags%} 
+{% load static %}
+{% block content%}
+<br/>
+
+
+<style>
+  html,body {
+    background-color: rgb(240, 238, 238);;
+  }
+</style>
+
+<div class="container">
+  <form method="POST" action = "">
+    <h1 class = "text-center">UPDATE STOCK FORM</h1><br>
+    {% csrf_token %} 
+    {{form | crispy}}
+    <input type = "submit" class="btn btn-info btn"type="button" value="UPDATESTOCK">
+  </form>
+</div>
+{% endblock %}

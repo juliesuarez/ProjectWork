@@ -1,0 +1,99 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeRealMotor Spare Parts Company</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+</head>
+<body>
+
+  <style>
+    html,body {
+      background-color: #dfe9f5;
+    }
+  </style>
+    <!-- startnavbar -->
+    
+    <div class="nav" style="background-color: black;" >
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <div id="logo"><img style="border-radius: 50px; width: 50px; height: 50px;" src="{% static 'image/logo.jpg' %}"></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a style="color:#FFF6E0 ; font-weight: bolder" class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: #FFF6E0; font-weight: bolder"  class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+              <div class="heading">
+                <h5 style="text-align: center; color:#FFF6E0 ; margin-left: 600px; font-weight: bolder;">Welcome to BeRealMotor Spare Parts Company</h5>
+              
+          </div>
+      </nav>
+  </div>
+
+  
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" >
+      <div class="carousel-item">
+        <img src="{% static 'image/julie.jpg' %}" style="width: 100%;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'image/tyres.jpg' %}" style="width: 100%;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'image/engines.webp' %}" style="width: 100%;">
+      </div>
+      <div class="carousel-item active">
+        <img src="{% static 'image/batteries.jpeg' %}" style="width: 100%;">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+    
+    <!-- footer -->
+    <footer style="background-color: black; color: #FFF6E0; text-align: center;">             
+      <p>@2023 BeRealMotor Spare Parts Company. All rights reserved.</p>
+      <p>Kiseka Market-Central Kampala</p>
+      <i class="fa fa-copyright" style="color: #FFF6E0">
+        juliesuareznakawesi
+      </i>
+      <i class="fa fa-twitter-square">
+        <a href="https://twitter.com/home">@juliecristiana</a>
+      </i>
+    </footer>
+  <!-- endfooter -->
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'ProjectWork/base.html'%} {% block content%}
+<br></br>
+
+<style>
+  html,body {
+    background-color: #D8D9DA;
+  }
+</style>
+<div class = "container">
+  <h1 class= "text-center" style="color: black; font-weight: bolder;">SPARE PARTS IN STOCK</h1>
+  <br>
+
+  <div class="card-body" style="background-color: black;">
+    <p>
+      <div class = "container" style="text-align: center; color:  #FFF6E0;">
+        <form action = "" method = "GET">
+          {{product_filters.form}}
+          <input type = "submit" value = "Search Products" class="btn btn-info btn"/>
+        </form>
+      </div>
+    </p>
+
+  </div>
+
+  <br>
+  <div class="card-body" style="background-color: black;">
+    <p>
+      
+  <table class="table">
+    <thead class="thead-dark" style="color:  #FFF6E0;">
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Part Name</th>
+        <th scope="col">Part Number</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Country of Origin</th>
+        <th scope="col">Branch Name</th>
+        <th scope="col">Unit Price(UGX)</th>
+        <th scope = "col">Sale</th>
+      </tr>
+    </thead>
+    {% for product in products%}
+    <tbody style="color:  #FFF6E0;">
+      <tr>
+        <!-- placeholders that will be replaced by the actual data of products -->    
+        <td>{{product.Category_name}}</td>
+        <td>{{product.part_name}}</td>
+        <td>{{product.part_number}}</td>
+        <td>{{product.total_quantity}}</td>
+        <td>{{product.country_of_origin}}</td>
+        <td>{{product.branch_name}}</td>
+        <td>UGX{{product.unit_price}}</td>
+        <!-- handling buy item link/button,hundled by product_detail view -->
+        <td><a href="{% url 'product_detail' product.id %}">
+        <input type="submit" value="PURCHASE" class="btn btn-info btn" type="button" /></a></td>
+
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+    </p>
+
+  </div>
+</div>
+{% endblock%}
