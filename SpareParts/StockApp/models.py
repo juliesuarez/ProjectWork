@@ -29,7 +29,6 @@ class SparePart(models.Model):
     Category_name = models.ForeignKey(Category,on_delete=models.CASCADE,null=False,blank=False)
     date_of_arrival = models.DateField(default=timezone.now)
     part_name = models.CharField(max_length=50,null=False,blank=False)
-    part_number = models.IntegerField(default=0,null=False,blank=False)
     country_of_origin = models.CharField(max_length=50,null=False,blank=False)
     total_quantity = models.IntegerField(default=0,null=False,blank=False,validators=[MinValueValidator(1)])
     issued_quantity = models.IntegerField(default=0,null=False,blank=False)
@@ -53,7 +52,6 @@ class Sale(models.Model):
     unit_price = models.IntegerField(default=0,null=False,blank=False)
     branch_name = models.CharField(max_length=50,null=False,blank=False)
     phone_number = models.CharField(max_length=50,null=False,blank=False)
-    part_number = models.IntegerField(max_length=50,null=False,blank=False)
     part_name = models.CharField(max_length=50,null=False,blank=False)
     date = models.DateField(default=timezone.now)
 

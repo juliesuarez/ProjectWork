@@ -22,17 +22,12 @@ urlpatterns = [
 
     #sales made
     path('all_sales/', views.all_sales, name='all_sales'),
-    path('issue_item/<str:pk>', views.issue_item, name='issue_item'),
+    path('issue_item/<int:pk>', views.issue_item, name='issue_item'),
    
 
     #add to stock by user
-    path('add_to_stock/<str:pk>', views.add_to_stock, name='add_to_stock'),
+    path('add_to_stock/<int:pk>', views.add_to_stock, name='add_to_stock'),
 
-    #deleting functionality
-    #path('delete/<int:product_id>', views.delete_product, name='delete_product'),
-
-    #registering functionality
-    path('register/', views.register, name='register'),
 
     #login & logout
     path('login/', auth_views.LoginView.as_view(template_name = 'ProjectWork/login.html'), name='login'),

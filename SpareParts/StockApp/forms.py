@@ -33,16 +33,5 @@ class SaleForm(ModelForm):
             'branch_name',
             'phone_number',
             'date',
-            'part_name',
-            'part_number',
         ]
 
-class RegisterForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = [
-            'username',
-            'email',
-            'password1',
-            'password2',
-        ]

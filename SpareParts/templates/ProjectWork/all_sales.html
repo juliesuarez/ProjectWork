@@ -51,6 +51,7 @@
         <th scope="col">Total Cost</th>
         <th scope="col">Amount Paid</th>
         <th scope="col">Amount Due</th>
+        <th scope="col">Receipt</th>
       </tr>
     </thead>
     {% for sale in sales %}
@@ -63,6 +64,7 @@
         <td>UGX{{sale.get_total}}</td>
         <td>UGX{{sale.amount_received}}</td>
         <td>UGX{{sale.amount_due}}</td>
+        <td>BR{{sale.id}}</td>
       </tr>
     </tbody>
     {% endfor %}
