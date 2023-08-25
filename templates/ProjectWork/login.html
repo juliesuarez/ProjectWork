@@ -1,84 +1,16 @@
+{% extends 'ProjectWork/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% load bootstrap5 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-</head>
-<body>
-    </style> 
-    <!-- startnavbar -->
-    <div class="nav" style="background-color: black;">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <div id="logo"><img style="border-radius: 50px; width: 50px; height: 50px;" src="{% static 'image/logo.jpg' %}"></div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a style="color: #FFF6E0; font-weight: bolder;" class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a style="color: #FFF6E0; font-weight: bolder;" class="nav-link" href="/login">Login</a>
-                </li>
-              </ul>
-              <div class="heading">
-                <h5 style="text-align: center; color: #FFF6E0; margin-left: 570px; font-weight: bolder;">Welcome to BeRealMotor Spare Parts Company</h5>
-              </div>
-              
-            </div>
-          </div>
-      </nav>
-    </div>
-  </div>
-</div> 
-    <!-- endnavbar -->
 
-    <!-- main -->
-    <style>
-      body,html {
-        background-color: #D8D9DA;
-      }
-    </style>
-    <div class="heading">
-      
-        <h2 style="text-align: center; color: black;">Login details here</h2>
-    </div>
+<style></style>
     {% block content %}
-    <form id="form" method = 'POST' style="border-radius: 20px; border: 30px solid black; padding: 30px; width: 700px; height: 400px; margin-block: 50px; margin-left: 300px;">
+    <h2 style="text-align: center; color: black; margin-top:30px; padding-bottom: 0;">Login details here</h2>
+    <form id="form" method = 'POST' style="border-radius: 20px; border: 10px solid #36454F; padding: 30px; width: 500px; height: 300px; margin-left: 400px;">
      {% csrf_token %} 
      <!-- for security purposes,prevents hackers from adding malicious content into our urls. -->
      {{form | crispy}}
       <!-- form handled by crispy forms -->
       <br>
-      <input type="submit" name="Submit" class="btn  btn-primary btn-block" style="margin-left: 210px;" type="button" value="LOGIN"> 
+      <input type="submit" name="Submit" class="btn  btn-info btn-block" style="margin-left: 150px;" type="button" value="LOGIN"> 
     </form>
     {% endblock %}
-    <!-- footer -->
-    <footer style="background-color: black; color: #FFF6E0; text-align: center;">             
-      <p>@copyright  2023 BeRealMotor Spare Parts Company. All rights reserved.</p>
-      <p>Kiseka Market-Central Kampala</p>
-      <i class="fa fa-copyright" style="color:#FFF6E0;">
-        juliesuareznakawesi
-      </i>
-      <i class="fa fa-twitter-square">
-        <a href="https://twitter.com/home">@juliecristiana</a>
-      </i>
-  </footer>
-  <!-- endfooter -->
-
-    
-
-</body>
-</html>

@@ -5,25 +5,35 @@
   body,html {
     background-color: #dfe9f5;
   }
+  th,td {
+    border: 1px solid white;
+    text-align: center;
+  }
+  td:hover {
+    background-color: #31d2f2;
+  }
   </style> 
+  <!-- <h1 style="text-align: center; color: black; font-weight: bolder; font-style: italic;">Welcome back!!!</h1> -->
 
 <div class="card-body" >
   <p>
-    <div class = "container" style="background-color: black;">
-      <h1 class = "text-center" style="color:  #FFF6E0; font-weight: bolder;">TOTAL SALES MADE</h1><br>
+    <div class = "container" style="background-color: #36454F;">
+      <h3 class = "text-center" style="color:  #FFF6E0; font-weight: bolder;">TOTAL SALES MADE</h3><br>
         <table class="table">
-          <thead class="thead-dark" style="background-color: #4477CE;">
+          <thead class="thead-dark" style="background-color: #FFF6E0 ;">
             <tr>
-              <th scope="col" style="font-weight: bolder;">Total Amount Received</th>
-              <th scope="col" style="font-weight: bolder;">Total Amount Due</th>
-              <th scope="col" style="font-weight: bolder;">Net Amount</th>
+              <th scope="col" style="font-weight: bolder;">Total Amount Received(UGX)</th>
+              <th scope="col" style="font-weight: bolder;">Total Amount Due(UGX)</th>
+              <th scope="col" style="font-weight: bolder;">Cash(UGX)</th>
+              <th scope="col" style="font-weight: bolder;">Total Sales(UGX)</th>
             </tr>
           </thead>  
           <tbody>
             <tr>    
-              <td style="font-weight: bolder; color:  #FFF6E0;">UGX{{total}}</td>
-              <td style="font-weight: bolder; color:  #FFF6E0;">UGX{{change}}</td>
-              <td style="font-weight: bolder; color:  #FFF6E0;">UGX{{net}}</td>
+              <td style="color:#FFF6E0;">{{total}}</td>
+              <td style="color:#FFF6E0;">{{amount_due}}</td>
+              <td style="color:#FFF6E0;">{{cash_at_hand}}</td>
+              <td style="color:#FFF6E0;">{{total_sales}}</td>
             </tr>
           </tbody>
         </table>
@@ -32,38 +42,40 @@
 
 </div>
 <br></br>
-<div class="card-body">
-  <p> 
-<div class = "container" style="background-color: black;">
+<div class="card-body"> 
+<div class = "container" style="background-color: #36454F;">
   <table class="table">
-    <thead class="thead-dark" style="background-color:#4477CE ;">
+    <thead class="thead-dark" style="background-color: #FFF6E0 ;">
       <tr>
         <th scope="col" style="font-weight: bolder;">Customer name</th>
         <th scope="col">Sparepart Purchased</th>
         <th scope="col">Quantity</th>
         <th scope="col">Unit Price(UGX)</th>
-        <th scope="col">Total Cost</th>
-        <th scope="col">Amount Paid</th>
-        <th scope="col">Amount Due</th>
+        <th scope="col">Total Cost(UGX)</th>
+        <th scope="col">Amount Paid(UGX)</th>
+        <th scope="col">Amount Due(UGX)</th>
+        <th scope="col">Receipt No.</th>
+        <th scope="col">Sales Date</th>
       </tr>
     </thead>
     {% for sale in sales %}
-    <tbody style="font-weight: bolder; color:  #FFF6E0;">
+    <tbody style="color:  #FFF6E0;">
       <tr>    
-        <td>{{sale.customer_name | title}}</td>
-        <td>{{sale.item | title}}</td>
+        <td>{{sale.customer_name | title|upper}}</td>
+        <td>{{sale.part | title}}</td>
         <td>{{sale.quantity}}</td>
-        <td>UGX{{sale.unit_price}}</td>
-        <td>UGX{{sale.get_total}}</td>
-        <td>UGX{{sale.amount_received}}</td>
-        <td>UGX{{sale.get_change}}</td>
+        <td>{{sale.unit_price}}</td>
+        <td>{{sale.get_total}}</td>
+        <td>{{sale.amount_received}}</td>
+        <td>{{sale.amount_due}}</td>
+        <td>BC{{sale.id}}</td>
+        <td>{{sale.date}}</td>
       </tr>
     </tbody>
     {% endfor %}
   </table>
-  </p>
-
 </div>
 
 </div>
+<br></br>
 {% endblock%}

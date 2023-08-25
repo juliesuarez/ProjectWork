@@ -7,7 +7,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>BeRealMotor Spare Parts Company</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'image/favicon_io/apple-touch-icon.png' %}">
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
@@ -17,6 +18,9 @@
   <style>
     body,html {
       background-color: #D8D9DA;
+    }
+    a:hover {
+      background-color:  #31d2f2;
     }
   </style>
   
@@ -32,12 +36,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a style="color:#FFF6E0 ; font-weight: bolder" class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                <a style="color:#FFF6E0 ; font-weight: bolder" class="nav-link active" aria-current="page" href="{% url 'index' %}">BRMSPC</a>
               </li>
             </ul>
-            <div class="heading">
-              <h5 style="text-align: center; color:#FFF6E0 ; margin-left: 740px; font-weight: bolder;"> BeRealMotor Spare Parts Company</h5>
-            
+            <li class="nav-item">
+              <a style="text-align: center; color:#FFF6E0 ; margin-left: 1000px; font-weight: bolder;"> BRMSPC</a>
+            </li>  
         </div>
     </nav>
 </div>
@@ -46,21 +50,27 @@
 <div class="body container-fluid container">
   <h2 class="text-center" style="color:black; font-weight: bolder;">You have successsfully logged out</h2><br>
   <h6 class="text-center "><a href="{% url 'login' %}"><input type="submit" 
-    value="Login Again"
+    value="LOGIN AGAIN"
     class="btn btn-info btn"
     type="button"/></a></h6>
 </div>
 {% endblock %}
 <br></br><br></br><br></br><br></br>
-<footer style="background-color: black; color: #FFF6E0; text-align: center;">             
-  <p>@2023 BeRealMotor Spare Parts Company. All rights reserved.</p>
-  <p>Kiseka Market-Central Kampala</p>
-  <i class="fa fa-copyright" style="color: #FFF6E0">
-    juliesuareznakawesi
-  </i>
-  <i class="fa fa-twitter-square">
-    <a href="https://twitter.com/home">@juliecristiana</a>
-  </i>
-</footer>
+<div class="card">
+  <div class="card-body" style="background-color: black;">
+    <footer style="background-color: black; color: #FFF6E0; text-align: center;">             
+      <p>@2023 BeRealMotor Spare Parts Company. All rights reserved.
+        Kiseka Market-Central Kampala
+      </p>
+      <i class="fa fa-copyright" style="color: #FFF6E0">
+        juliesuareznakawesi
+      </i>
+      <i class="fa fa-twitter-square">
+        <a href="https://twitter.com/home">@juliecristiana</a>
+      </i>
+    </footer>
+  </div>
+</div>
+
 </body>
 </html>

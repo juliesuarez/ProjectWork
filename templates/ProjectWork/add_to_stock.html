@@ -7,16 +7,19 @@
 
 <style>
   html,body {
-    background-color: rgb(240, 238, 238);;
+    background-color: #D8D9DA;
+  }
+  .card {
+    width: 50%;
+    margin-left: 300px;
   }
 </style>
-
-<div class="container">
-  <form method="POST" action = "">
-    <h1 class = "text-center">UPDATE STOCK FORM</h1><br>
-    {% csrf_token %} 
-    {{form | crispy}}
-    <input type = "submit" class="btn btn-info btn"type="button" value="UPDATESTOCK">
-  </form>
-</div>
+    <div class="container">
+      <form method="POST" action = "" style="border-radius: 25px; border: 8px solid #36454F;padding-left: 5px; padding-right: 5px;padding-bottom: 5px;">
+        <h1 class = "text-center">UPDATE STOCK HERE</h1><br>
+        {% csrf_token %} 
+        {{form | crispy}}
+        <input type = "submit" class="btn btn-info btn"type="button" value="UPDATE STOCK" style="margin-left: 200px;">
+      </form>
+    </div>
 {% endblock %}

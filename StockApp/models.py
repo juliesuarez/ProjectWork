@@ -24,12 +24,11 @@ class Category(models.Model):# created a table called category
         return self.name 
     
 #creating a model for product
-class Product(models.Model):
+class SparePart(models.Model):
     #creating a relationship between Product and Category.
     Category_name = models.ForeignKey(Category,on_delete=models.CASCADE,null=False,blank=False)
     date_of_arrival = models.DateField(default=timezone.now)
     part_name = models.CharField(max_length=50,null=False,blank=False)
-    part_number = models.IntegerField(default=0,null=False,blank=False)
     country_of_origin = models.CharField(max_length=50,null=False,blank=False)
     total_quantity = models.IntegerField(default=0,null=False,blank=False,validators=[MinValueValidator(1)])
     issued_quantity = models.IntegerField(default=0,null=False,blank=False)
@@ -46,14 +45,13 @@ class Product(models.Model):
 #items in parethesis enable us to validate our fields.
 class Sale(models.Model):
     #creating a relationship between class Product and Sale.
-    item = models.ForeignKey(Product,on_delete=models.CASCADE,null=False,blank=False)
+    part = models.ForeignKey(SparePart,on_delete=models.CASCADE,null=False,blank=False)
     quantity = models.IntegerField(default=0,null=False,blank=False)
     amount_received = models.IntegerField(default=0,null=False,blank=False)
     customer_name = models.CharField(max_length=100,null=False,blank=False)
     unit_price = models.IntegerField(default=0,null=False,blank=False)
     branch_name = models.CharField(max_length=50,null=False,blank=False)
     phone_number = models.CharField(max_length=50,null=False,blank=False)
-    part_number = models.IntegerField(max_length=50,null=False,blank=False)
     part_name = models.CharField(max_length=50,null=False,blank=False)
     date = models.DateField(default=timezone.now)
 
@@ -61,14 +59,14 @@ class Sale(models.Model):
 
     #here we are getting the total amount got after selling a given quantity of stock at a given unit price.
     def get_total(self):
-        total = self.quantity * self.item.unit_price
+        total = self.quantity * self.part.unit_price
         return int(total)
     
     #here we are getting the amount the customer is being demanded after paying in installment.
-    def get_change(self):
-        change = self.get_total() - self.amount_received
-        return abs(int(change))
+    def amount_due(self):
+        amount_due = self.get_total() - self.amount_received
+        return abs(int(amount_due))
     
     def __str__(self):
-        return self.item.part_name 
+        return self.part.part_name 
     

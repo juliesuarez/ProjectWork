@@ -5,7 +5,6 @@ html,body {
     height: 100vh;
     display: table;
     position: relative;
-    /* background-image: url('/static/image/batteries.jpeg'); */
     background-position: center;
     background-attachment: scroll;
     -o-background-size: cover;
@@ -15,14 +14,10 @@ html,body {
     background-repeat: no-repeat;
 }
 
-body{
-      background-color: aqua;
-      font-family: 'raleway';
- }
 
 
 form {
-    width: 40%;
+    width:50%;
     margin: 0 auto;
 }
 
@@ -31,11 +26,11 @@ form {
 }
 
 .navbar li a {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .navbar-brand {
-    font-size: 30px !important;
+    font-size: 10px !important;
 }
 
 @media(max-width: 767px){
@@ -43,3 +38,4 @@ form {
         width: 90%;
     }
 }
+

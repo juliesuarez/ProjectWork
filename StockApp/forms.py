@@ -12,10 +12,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 
-#handles a form that the user will use to add the stock
+#handles a form that the user will use to add the stock/update stock.
 class AddForm(ModelForm): #workers edit here,add received stock.
+    #class Meta enables us to edit our table/model or manipulate
     class Meta:
-        model = Product
+        model = SparePart
         fields = [
             'received_quantity',
             'branch_name'
@@ -33,16 +34,5 @@ class SaleForm(ModelForm):
             'branch_name',
             'phone_number',
             'date',
-            'part_name',
-            'part_number',
         ]
 
-class RegisterForm(UserCreationForm):
-    class Meta:
-        model = User
-        fields = [
-            'username',
-            'email',
-            'password1',
-            'password2',
-        ]
