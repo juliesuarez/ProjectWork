@@ -1,0 +1,41 @@
+html,body {
+    position: relative;
+    overflow-x: hidden;
+    width: 100% !important;
+    height: 100vh;
+    display: table;
+    position: relative;
+    background-position: center;
+    background-attachment: scroll;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+form {
+    width:50%;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.navbar li a {
+    font-size: 15px;
+}
+
+.navbar-brand {
+    font-size: 10px !important;
+}
+
+@media(max-width: 767px){
+    form { 
+        width: 90%;
+    }
+}
+

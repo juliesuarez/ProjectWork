@@ -1,0 +1,72 @@
+{% extends 'ProjectWork/base.html' %}
+{% block content%}
+{% load static %}
+<br />
+
+<style>
+  html,body {
+    background-color: #D8D9DA;
+  }
+
+th,td {
+  border: 1px solid black;
+  text-align: center;
+}
+.card {
+  width: 90%;
+  height: 90%;
+  margin-left: 50px;
+}
+</style>
+
+
+<div class="container" >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header" style="background-color: beige;">
+          <h4 class="text-center" style="font-weight: bolder;">RECEIPT DETAILS</h4><br>
+          <h5 class="lead" style="font-weight: bolder; text-align: center;">Customer Name: {{receipt.customer_name | title}}</h5>
+        </div>
+        <div class="card-block" style="background-color: beige;">
+          <div class="table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <td><strong>SparePart Name</strong></td>
+                  <td class="text-xs-center"><strong>Spare part  Quantity</strong></td>
+                  <td class="text-xs-right"><strong>Total Bill(Ugx)</strong></td>
+                  <td class="text-xs-right"><strong>Amount Paid(Ugx)</strong></td>
+                  <td class="text-xs-right"><strong>Total Amount Due(UgX)</strong>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{receipt.part| title}}</td>
+                  <td class="text-xs-center">{{receipt.quantity }}</td>
+                  <td class="text-xs-center">UgX{{receipt.get_total | title}}</td>
+                  <td class="text-xs-right">Ugx{{ receipt.amount_received }}</td>
+                  <td class="text-xs-right">Ugx{{ receipt.amount_due }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div style="text-align: center; font-style: italic; font-weight: bolder; color: #6c85bd;">
+              <p> PAYMENT RECEIVED WITH THANKS!!!
+                "Quality is Our First Priority"
+              </p>
+            </div>
+            <P style="text-align: center; font-style: italic; color: #6c85bd; font-weight: bolder; " >
+              ContactUs 
+              <a href="email.com">info@BeRealMotor.2023.com</a>
+            </P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+{% endblock %}

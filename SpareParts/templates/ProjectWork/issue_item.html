@@ -1,0 +1,35 @@
+{% extends 'ProjectWork/base.html'%}
+{% load crispy_forms_tags %}
+{%  load static %}
+{% block content %}
+<br/>
+
+<style>
+    html,body {
+      background-color: #D8D9DA;
+    }
+    .name {
+        border: 1px solid red;
+    }
+</style>
+<div class="row">
+    <div class="col-12">
+        <div class="card-body">
+            <div class="container">
+                <form method="POST" action="" style="border-radius: 25px; border: 8px solid black;padding-left: 5px; padding-right: 5px;padding-bottom: 5px;" >
+                    <h1 class="van" style="color: black; text-align: center; font-weight: bolder;">SALES FORM</h1>
+                    <br/>
+                    {% csrf_token %}
+                    {{ sales_form | crispy }}
+                   <br> <input type="submit" class="btn btn-info btn" type="button" value="SALE" style="margin-left: 200px;">
+                </form>
+            
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>
+<br></br>
+{% endblock %}

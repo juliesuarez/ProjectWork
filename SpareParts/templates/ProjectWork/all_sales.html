@@ -1,0 +1,76 @@
+{% extends 'ProjectWork/base.html'%} {% block content%}
+<br></br>
+
+<style>
+  body,html {
+    background-color: #dfe9f5;
+  }
+  th,td {
+    border: 1px solid white;
+    text-align: center;
+  }
+  </style> 
+  <!-- <h1 style="text-align: center; color: black; font-weight: bolder; font-style: italic;">Welcome back!!!</h1> -->
+
+<div class="card-body" >
+  <p>
+    <div class = "container" style="background-color: black;">
+      <h3 class = "text-center" style="color:  #FFF6E0; font-weight: bolder;">TOTAL SALES MADE</h3><br>
+        <table class="table">
+          <thead class="thead-dark" style="background-color: #FFF6E0 ;">
+            <tr>
+              <th scope="col" style="font-weight: bolder;">Total Amount Received</th>
+              <th scope="col" style="font-weight: bolder;">Total Amount Due</th>
+              <th scope="col" style="font-weight: bolder;">Cash</th>
+              <th scope="col" style="font-weight: bolder;">Total Sales</th>
+            </tr>
+          </thead>  
+          <tbody>
+            <tr>    
+              <td style="color:#FFF6E0;">UGX{{total}}</td>
+              <td style="color:#FFF6E0;">UGX{{amount_due}}</td>
+              <td style="color:#FFF6E0;">UGX{{cash_at_hand}}</td>
+              <td style="color:#FFF6E0;">UGX{{total_sales}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </p>
+
+</div>
+<br></br>
+<div class="card-body"> 
+<div class = "container" style="background-color: black;">
+  <table class="table">
+    <thead class="thead-dark" style="background-color: #FFF6E0 ;">
+      <tr>
+        <th scope="col" style="font-weight: bolder;">Customer name</th>
+        <th scope="col">Sparepart Purchased</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price(UGX)</th>
+        <th scope="col">Total Cost</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Amount Due</th>
+        <th scope="col">Receipt</th>
+      </tr>
+    </thead>
+    {% for sale in sales %}
+    <tbody style="color:  #FFF6E0;">
+      <tr>    
+        <td>{{sale.customer_name | title}}</td>
+        <td>{{sale.part | title}}</td>
+        <td>{{sale.quantity}}</td>
+        <td>UGX{{sale.unit_price}}</td>
+        <td>UGX{{sale.get_total}}</td>
+        <td>UGX{{sale.amount_received}}</td>
+        <td>UGX{{sale.amount_due}}</td>
+        <td>BR{{sale.id}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+</div>
+<br></br>
+{% endblock%}
