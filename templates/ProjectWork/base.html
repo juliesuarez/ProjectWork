@@ -26,6 +26,9 @@
       top: 0;
       background-color: black;
       width: 100%;
+      overflow: hidden;
+      display: block;
+      z-index: 500;
     }
     .suarez-footer {
       position: fixed;
@@ -69,8 +72,9 @@
                     <a  style="color: #FFF6E0; margin-left: 1000px; font-weight: bolder;" class="nav-link active" aria-current="page" href="{% url 'login' %}">LOGIN</a>
                   </li>
                   <li class="nav-item" >
-                    <a  style="color: #FFF6E0; margin-left: 30px; font-weight: bolder;" class="nav-link">BRMSPC</a>
+                    <a  style="color: #FFF6E0; font-weight: bolder;" class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/admin/login/?next=/admin/">ADMIN</a>
                   </li>
+                 
                 {% endif %}
               </ul> 
             </div>
